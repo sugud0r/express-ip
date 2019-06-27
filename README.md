@@ -14,7 +14,7 @@ npm install express-ip-middleware
 ```
 const express = require('express');
 const app = express();
-const expressip = require('express-ip');
+const expressip = require('express-ip-middleware');
 app.use(expressip());
 
 app.get('/', function (req, res) {

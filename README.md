@@ -5,7 +5,7 @@ This is an express module for getting IP information using geoip-lite. It can al
 # Installation
 
 ```
-npm install express-ip
+npm install express-ip-middleware
 ```
 
 # Usage
@@ -15,36 +15,15 @@ npm install express-ip
 const express = require('express');
 const app = express();
 const expressip = require('express-ip');
-app.use(expressip().getIpInfoMiddleware);
+app.use(expressip());
 
 app.get('/', function (req, res) {
     res.send(req.ipInfo);
 });
 
 ```
-## full
-```
-const express = require('express');
-const app = express();
-const expressip = require('express-ip');
-const PORT = process.env.PORT || 7000;
-const path = require('path');
 
-app.use(expressip().getIpInfoMiddleware);
-
-
-app.set("PORT", PORT);
-
-app.get('/', function (req, res) {
-    res.send(req.ipInfo);
-});
-
-app.listen(app.get('PORT'), function () {
-    console.log('Express started on http://localhost:' +
-        app.get('PORT') + '; press Ctrl-C to terminate.');
-});
-
-```
+See examples/ folder to more.
 
 # Author
-Oyetoke Toby <oyetoketoby80@gmail.com> (http://patreon.com/oyetoketoby)
+Moisés González <moige01@gmail.com>
